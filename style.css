@@ -8,30 +8,48 @@ body{
 }
 
 .wholebox{
-    width: 60rem;
-  height: 24rem;
-  margin:14rem 28rem;
-  background-color: #16213E;
-  border-radius: 3rem;
+   width: 60rem;
+  height: 39rem;
+  margin:
+10rem 29rem;
+  background-color: white;
+  border-radius:
+3rem;
 }
 .box{
-    width: 59.5rem;
+    width: 60rem;
   height: 2rem;
   margin: 3rem 0rem;
   outline: none;
   box-sizing: border-box;
+  overflow: hidden;
+  border-radius: 3rem;
+  text-align: center;
 }
 #btn{
-    color: white;
+    color: wheat;
   background-color: blue;
-  margin:1rem 28rem;
+  margin:-2rem 28rem;
   border-radius:1rem;
   border-color:blue;
   width: 5rem;
   height: 2rem;
+  transition: background-color 0.3s ease;
+}
+#btn:hover{
+  background-color: white;
+  transform: scale(0.8);
+  border-color: rgb(41, 56, 114);
+  background-color: rgb(41, 56, 114);
+  color: white;
+
 }
 .output{
     background-color: antiquewhite;
-    height: 4rem;
+    height: 30rem;
     width: 60rem;
+    overflow-x: hidden;
+    border-bottom-right-radius: 3rem;
+     border-bottom-left-radius: 3rem;
+     margin:3rem 0rem;
 }
