@@ -34,15 +34,19 @@ inputAdd.addEventListener("click", function(e){
 
 function saveData()
 {
-localStorage.setItem("data",inputData.innerHTML);
-}
+    if(inputAdd){
+localStorage.setItem("data",inputAdd.innerHTML);
+}}
 function getData()
 {
+    if(inputAdd){
     inputAdd.innerHTML=localStorage.getItem("data");
-}
+}}
 getData();
-taskInput.addEventListener('keydown', function(event) {
-    if (event.key === 'Enter') {
-        addButton(); 
-    }
-});
+if (inputBox) { 
+    inputBox.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            addButton();
+        }
+    });
+}
