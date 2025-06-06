@@ -1,92 +1,48 @@
+let inputBox = document.getElementById("inputBox");
+let inputAdd = document.getElementById("inputAdd");
 
- 
-let a = document.getElementById("id1");
-let btn = document.getElementById("btn");
-let output = document.getElementById("output");
-let del = document.getElementById("delete")
-let clear= document.getElementById("clear");
- const addItem = document.createElement('li');
-let tasks = JSON.parse(localStorage.getItem("tasks"))
-  function saveTasks() {
-            localStorage.setItem("tasks", JSON.stringify(tasks));
-        }
 
-    function render (){
-        output.innerHTML="";
-     asks.forEach((data, index) => {
-         const addItem = document.createElement('li');
-         addItem.innerHTML= `
-         <span>${data}</span>
-         `
-     });
-     taskList.appendChild(addItem);
-     saveTasks();
+function addButton(){
+if(inputBox.value == ""){
+    alert("Add the taxk")
+}
+else{
+    let li = document.createElement('li')
+    li.innerHTML=inputBox.value;
+    inputAdd.appendChild(li);
+    
+    let span = document.createElement("span")
+    span.innerHTML= "\u00d7";
+    li.append(span);
+
+}
+inputBox.value="";
+saveData();
+}
+
+inputAdd.addEventListener("click", function(e){
+   if(e.target.tagName==="LI"){
+        e.target.classlist.toggle("checked");
+        saveData();
     }
-function click()
- {
- var data = a.value.trim();
- if (data == " ")
-        {
-            alert("Enter the data");
-            return;
-        }
-    tasks.push(data);
-    data= "";
-    renderTask();
+    else if (e.target.tagName==="SPAN"){
+        e.target.parentElement.remove();
+        
+        saveData();
     }
- 
- 
-    btn.addEventListener("click",click);
+},false);
 
-
-a.addEventListener("input",addTask)
- 
-
-
-
-
-
-// function Delete(){
-// localStorage.removeItem(key);
-// }
-// function Clear()
-// {
-//     localStorage.clear();
-// }
-
-// del.addEventListener('click',Delete);
-// clear.addEventListener('click',Clear);
-
-
-
-// btn.addEventListener("click",click);
-
-// function click()
-// {
-//     // output.innerText = b;
-//     d=localStorage.length;
-//     c=localStorage.setItem(d,b);
-//     const data = JSON.parse(localStorage.getItem("myData"));
-//     if(data && Array.isArray(data)){
-//         data.forEach(item => {
-//         const li = document.createElement("li");
-//         output.appendChild(li);
-//     });
-//     else{
-//         output.innerHTML= "<li>No Data <li>";
-//     }
-// }
-
-// function Delete(){
-// localStorage.removeItem(key);
-// }
-// function Clear()
-// {
-//     localStorage.clear();
-// }
-// a.addEventListener("input", addTask);
-// btn.addEventListener("click",click);
-// del.addEventListener("click",Delete);
-// clear.addEventListener("click",Clear);
-
-
+function saveData()
+{
+localStorage.setItem("data",inputData.innerHTML);
+}
+function getData()
+{
+    inputAdd.innerHTML=localStorage.getItem("data");
+}
+getData();
+taskInput.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter') {
+        addButton(); 
+    }
+});

@@ -5,10 +5,22 @@
     <link rel="shortcut icon" type="x-icon" href="to-do-list.png">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TO-DO LIST</title>
-    <!-- <link rel="stylesheet" href="style.css"> -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-     
+    <div class="container">
+        <div class="todo-list">
+           <div class="text-todo"><h1>TO-DO LIST<img src="to-do-list.png" id="image" ></h1></div> 
+           <input type="text" placeholder="Add the task" id="inputBox">
+           <button id="addButton" class="button" onclick="addButton()">Add</button>
+           <ul id="inputAdd" class="inputAdd" >
+
+               <!-- <li class="checked">task 1</li>
+               <li>task 2</li> -->
+           </ul>
+        </div>
+    </div>
+    
 </body>
 <script src="script.js"></script>
 </html>

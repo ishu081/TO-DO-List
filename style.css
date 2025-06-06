@@ -1,55 +1,101 @@
 
 *{
-    margin: 0;
-    padding: 0;
-}
-body{
-    background-color: #1A1A2E;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Poppins, sans-serif;
 }
 
-.wholebox{
-   width: 60rem;
-  height: 39rem;
-  margin:
-10rem 29rem;
-  background-color: white;
-  border-radius:
-3rem;
+.container{
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(130deg, #153677,#4e085f);;
+  padding:10px;
+
 }
-.box{
-    width: 60rem;
-  height: 2rem;
-  margin: 3rem 0rem;
-  outline: none;
-  box-sizing: border-box;
-  overflow: hidden;
+.text-todo{
+  background-color: #fff;
+    margin: 6rem 16.5rem;
+}
+.todo-list{
+  width: 50%;
+  max-width: 807px;
+  height: 77%;
+  background:#fff;
+  margin:100px auto 20px;
   border-radius: 3rem;
-  text-align: center;
 }
-#btn{
-    color: wheat;
-  background-color: blue;
-  margin:-2rem 28rem;
-  border-radius:1rem;
-  border-color:blue;
+#image{
+  width: 3rem;
+  height: 3rem;
+  margin: -1rem 1rem;
+}
+#inputBox{
+  width: 44rem;
+  height: 3rem;
+  margin:-2rem 3rem;
+  background-color: whitesmoke;
+  border:whitesmoke solid 1rem;
+  border-radius: 3rem;
+  text-align: justify;
+}
+.button{
+   background-color: #4e085f;
   width: 5rem;
   height: 2rem;
-  transition: background-color 0.3s ease;
-}
-#btn:hover{
-  background-color: white;
-  transform: scale(0.8);
-  border-color: rgb(41, 56, 114);
-  background-color: rgb(41, 56, 114);
   color: white;
+  margin:1rem 22rem;
+  border-radius:3rem;
+  transition: background-color 30.s ease;
+  cursor: pointer;
+}
+
+.button:hover{
+  background-color: #bb67d0;
 
 }
-.output{
-    background-color: antiquewhite;
-    height: 30rem;
-    width: 60rem;
-    overflow-x: hidden;
-    border-bottom-right-radius: 3rem;
-     border-bottom-left-radius: 3rem;
-     margin:3rem 0rem;
+ul li {
+  list-style: none;
+  font-size: 17px;
+  position: relative;
+  padding: 12px 8px 12px 50px;
+  user-select: none;
+  cursor: pointer;
+}
+ul li::before{
+  content: '';
+  position: relative;
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  background-image: url(images/radio.png);
+  background-size: cover;
+  background-position: center;
+  top: 12px;
+left: 8px;
+}
+ul li.checked{
+  color: #555;
+  text-decoration: line-through;
+}
+ul li.checked::before{
+  background-image: url(images/unchecked.png);
+}
+
+
+ul li span {
+  position: absolute;
+right: 0;
+top: 5px;
+width: 40px;
+height: 40px;
+font-size: 22px;
+color: #555;
+line-height: 40px;
+text-align: center;
+border-radius: 50%;
+}
+
+ul li span:hover{
+  background: #edeef0;
 }
