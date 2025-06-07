@@ -13,7 +13,7 @@ else{
     
     let span = document.createElement("span")
     span.innerHTML= "\u00d7";
-    li.append(span);
+    li.appendChild(span);
 
 }
 inputBox.value="";
